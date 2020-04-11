@@ -17,7 +17,7 @@ for epsilon = min(pval):stepsize:max(pval)
 	yNo = yAll(yAll(:,1)==0,:);
 	tp = sum( (yYes)(:,1) == (yYes)(:,2)); % true positives
 	fp = sum(yNo)(:,2); % false positives
-	fn = sum(yYes)(:,2) - sum(yYes)(:,2); % false negatives
+	fn = sum(yYes)(:,1) - sum(yYes)(:,2); % false negatives
 	
 	prec = tp/(tp+fp); % precision
 	rec = tp/(tp+fn); % recall
